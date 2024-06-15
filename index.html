@@ -275,22 +275,22 @@
             <script>
                 var istTime = new Date().getHours();
                 console.log(istTime);
-                if (istTime <= 13) {
-                    document.write(`
-                    <div class="floating-button" id="isInBus">
-                        <div class="button-content">
-                            <span id="buttonText"><img src="img/left.png" alt="Left Arrow" width="15" height="15"></span>
-                            <div class="toggle-content" id="toggleContent">
-                                <span>In Bus?</span>
-                                <label class="switch">
-                                    <input type="checkbox" id="toggleSwitch">
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    `);
-                }
+                // if (istTime <= 13) {
+                //     document.write(`
+                //     <div class="floating-button" id="isInBus">
+                //         <div class="button-content">
+                //             <span id="buttonText"><img src="img/left.png" alt="Left Arrow" width="15" height="15"></span>
+                //             <div class="toggle-content" id="toggleContent">
+                //                 <span>In Bus?</span>
+                //                 <label class="switch">
+                //                     <input type="checkbox" id="toggleSwitch">
+                //                     <span class="slider round"></span>
+                //                 </label>
+                //             </div>
+                //         </div>
+                //     </div>
+                //     `);
+                // }
             </script>
         </div>
     </div>
@@ -488,12 +488,7 @@
             zoomSnap: 0.25 // Adjust this value as needed
         }).setView([0, 0], 19);
 
-        var path = '';
-        if (istTime <= 13) {
-            path = 'mlrit_route1_morning.json';
-        } else {
-            path = 'mlrit_route1_evening.json';
-        }
+        var path = 'mlrit_route1_evening.json';
 
         fetch(path)
             .then(response => response.json())
